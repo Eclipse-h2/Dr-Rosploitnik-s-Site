@@ -109,7 +109,7 @@ a:is(:link, :active, :visited).active {
     transform: translateY(40px);
     margin: 100px auto;
     width: 70%;
-    border: 5px solid rgb(0, 0, 0);
+    border: 2px solid rgb(0, 0, 0);
     display: flex;
     overflow-x: auto;
 }
@@ -125,8 +125,8 @@ a:is(:link, :active, :visited).active {
     padding-right: 1em;
 }
 .card {
-    flex: 0 0 5em;
-    height: 4.8em;
+    flex: 0 0 12em;
+    height: 6.8em;
     padding: 1em;
     background: white;
     font-size: 2.5rem;
