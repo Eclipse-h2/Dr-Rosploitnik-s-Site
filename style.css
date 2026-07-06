@@ -41,15 +41,17 @@ body {
     color: #ffffff
 }
 
+/* Keep your first rule as it is */
 li a:is(:link, :active, :visited) {
     color: rgb(49, 49, 49);
     text-decoration: none;
     padding: .5em 1.5rem;
 }
 
-a:is(:link, :active, :visited).active {
-    color: rgb(255, 255, 255);
-    background: transparent
+/* Update your second rule to match the selector power */
+li a.active {
+    color: rgb(255, 255, 255) !important;
+    background: transparent;
 }
 
 .image {
