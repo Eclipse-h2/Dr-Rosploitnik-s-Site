@@ -31,6 +31,11 @@ body {
     color: white;
     text-decoration: underline;
 }
+.nav-links a.active {
+    color: #ffffff; /* White color */
+}
+
+
 .logo {
     outline: none;
     text-decoration: none;
